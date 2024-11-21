@@ -29,9 +29,10 @@ function App() {
         headers: { "Content-type": "application/json; charset=UTF-8" },
       }).then((res) => res.json()),
     onSuccess: (newPost) => {
-      queryClient.setQueryData(["posts"], (oldPosts) => [...oldPosts, newPost]);
+      queryClient.setQueryData(["posts"], (oldPosts) => [...oldPosts, newPost]); //updates UI with new posts
     },
   });
+
   console.log(data);
 
   if (error || isError) return <h1>Error</h1>;
